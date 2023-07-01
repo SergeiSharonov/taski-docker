@@ -166,7 +166,7 @@ jobs:
       - name: Deploy
         run: |
           TEMP=$(mktemp)
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > $TEMP
+          echo "${{ secrets.SSH_KEY }}" > $TEMP
       - name: Checkout repo
         uses: actions/checkout@v3
       # Копируем docker-compose.production.yml на продакшен-сервер
