@@ -163,10 +163,6 @@ jobs:
         - build_frontend_and_push_to_docker_hub
         - build_gateway_and_push_to_docker_hub
       steps:
-      - name: Deploy
-        run: |
-          TEMP=$(mktemp)
-          echo "${{ secrets.SSH_KEY }}" > $TEMP
       - name: Checkout repo
         uses: actions/checkout@v3
       # Копируем docker-compose.production.yml на продакшен-сервер
